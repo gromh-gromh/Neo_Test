@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./sine_graph.js"></script>
+    <title>Sine wave</title>
+</head>
+<body>
+    <canvas id="graph"></canvas>
+
+    <form id="sine_params" action="#" onsubmit="main(event)">
+        <input type="text" name="width" placeholder="graph width">
+        <input type="text" name="height" placeholder="graph height">
+        <input type="text" name="amplitude" placeholder="amplitude">
+        <input type="text" name="period" placeholder="period (2*PI / n)">
+        <input type="text" name="phase" placeholder="phase">
+        <button type="submit">Generate graph</button>
+    </form>
+
+
+</body>
+</html>
