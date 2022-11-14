@@ -13,6 +13,8 @@ class SineGraph {
         this._phase;
 
         // Вспомогательные параметры отрисовки
+        this._verticalDivision = 10;
+        this._horizontalDivision = 20;
         this._halfHeight;
         this._halfWidth;
         this._verticalGap;
@@ -37,8 +39,8 @@ class SineGraph {
         this._amplitude = amplitude;
         this._period = period;
         this._phase = phase;
-        this._verticalGap = Math.floor(graph.height / 10);
-        this._horizontalGap = Math.floor(graph.width / 20);
+        this._verticalGap = Math.floor(graph.height / this._verticalDivision);
+        this._horizontalGap = Math.floor(graph.width / this._horizontalDivision);
         this._gridStartPoint = - this._horizontalGap * (this._phase % 1);
         this._gridEndPoint = this._graph.width + this._gridStartPoint;
 
@@ -143,7 +145,7 @@ class SineGraph {
         // Вдоль оси Y
         for(let i = 0; i < this._graph.height; i += this._verticalGap) {
             let text = `${(this._halfHeight - i) / this._verticalGap}`;
-            this._context.fillText(text, this._halfWidth - this._horizontalGap * this._phase + 3, i - horizontalPadding);
+            this._context.fillText(text, this._halfWidth - this._horizontalGap * this._phase + horizontalPadding, i - verticalPadding);
         }
 
         // Вдоль оси X
