@@ -144,13 +144,13 @@ class SineGraph {
 
         // Вдоль оси Y
         for(let i = 0; i < this._graph.height; i += this._verticalGap) {
-            let text = `${(this._halfHeight - i) / this._verticalGap}`;
+            let text = `${Math.floor((this._halfHeight - i) / this._verticalGap)}`;
             this._context.fillText(text, this._halfWidth - this._horizontalGap * this._phase + horizontalPadding, i - verticalPadding);
         }
 
         // Вдоль оси X
         for(let j = this._gridStartPoint; j <= this._gridEndPoint; j += this._horizontalGap){
-            let text = Number((((j - this._halfWidth ) / this._horizontalGap + this._phase) * this._period).toFixed(1));
+            let text = Number((((j - this._halfWidth ) / this._horizontalGap + this._phase) * this._period  ).toFixed(1));
             if(text) {
                 this._context.fillText(text, j + horizontalPadding, this._halfHeight - verticalPadding);
             }
