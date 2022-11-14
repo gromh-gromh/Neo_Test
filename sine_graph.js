@@ -14,7 +14,7 @@ class SineGraph {
 
         // Вспомогательные параметры отрисовки
         this._verticalDivision = 10;
-        this._horizontalDivision = 20;
+        this._horizontalDivision = 10;
         this._halfHeight;
         this._halfWidth;
         this._verticalGap;
@@ -150,9 +150,8 @@ class SineGraph {
 
         // Вдоль оси X
         for(let j = this._gridStartPoint; j <= this._gridEndPoint; j += this._horizontalGap){
-            let factor = Number((((j - this._halfWidth ) / this._horizontalGap + this._phase) / this._period).toFixed(1));
-            if(factor) {
-                let text = `${factor}*Pi`;
+            let text = Number((((j - this._halfWidth ) / this._horizontalGap + this._phase) * this._period).toFixed(1));
+            if(text) {
                 this._context.fillText(text, j + horizontalPadding, this._halfHeight - verticalPadding);
             }
         }
